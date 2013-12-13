@@ -1,1 +1,38 @@
-<h1>Hello from the Introduction-O-Matic!</h1>
+<h1>Welcome to the Introduction-O-Matic!</h1>
+
+<ol>
+<li>Create an event</li>
+<li>Send your guests the link</li>
+<li>Your guests log in and answer some questions</li>
+<li>See all your guests and their answers!</li>
+</ol>
+
+
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :event_title %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+  <div class="actions">
+    <%= f.hidden_field :host_id, value: current_user.id %>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

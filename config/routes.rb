@@ -3,6 +3,9 @@ match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 match 'auth/failure', to: redirect('/'), via: [:get, :post]
 match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
+post '/events' => 'main#create', as: 'events'
+get '/event/:id' => 'main#show', as: 'event'
+
 root 'main#index'
 
 

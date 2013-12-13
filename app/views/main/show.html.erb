@@ -1,0 +1,17 @@
+Your event link is: <%= event_url(@event) %>
+
+<h2>Event Guests:</h2>
+<ul>
+  <% @event.users.each do |user| %>
+    <li><%= user %></li>
+  <% end %>
+</ul>
+
+<div id="user-widget">
+  <% if current_user %>
+    Welcome <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  <% end %>
+</div>

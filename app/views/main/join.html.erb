@@ -12,7 +12,7 @@
       <%= f.text_field :response %>
     </div>
 
-    <input type="file" accept="image/*;capture=camera">
+    <input type="file" name="image" accept="image/*" capture="camera">
 
     <div class="actions">
       <%= f.hidden_field :user_id, value: current_user.id %>

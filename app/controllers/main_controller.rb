@@ -25,6 +25,7 @@ class MainController < ApplicationController
 	end
 
 	def submit_first_answer
+		binding.pry
 		@answer = Answer.new(answer_params)
 		@event.users << current_user
 

@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
+gem 'bootstrap-sass'
  
 group :development do
 	gem 'pry-rails'
@@ -29,5 +30,7 @@ group :development do
   gem 'rails_best_practices'
   gem 'rails-footnotes'
   gem 'smusher'
+  gem 'rails_layout'
 end
+
 

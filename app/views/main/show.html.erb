@@ -1,17 +1,15 @@
-Your event link is: <%= event_url(@event) %>
+Your event link is: <%= join_url(@event) %>
 
 <h2>Event Guests:</h2>
-<ul>
-  <% @event.users.each do |user| %>
-    <li><%= user %></li>
-  <% end %>
-</ul>
 
-<div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+<div class="all_guests">  
+
+  <% @event.users.each do |user| %>
+    <div class="guest_thumbnail center">
+      <figure><%= image_tag user.image %></figure>
+      <strong><%= link_to user.first_name, user.facebook_profile_link %></strong><br> 
+      <strong><%= user.answers.last.response %></strong>
+    </div>
   <% end %>
+
 </div>

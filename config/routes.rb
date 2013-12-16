@@ -5,6 +5,8 @@ match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
 post '/events' => 'main#create', as: 'events'
 get '/event/:id' => 'main#show', as: 'event'
+get '/event/:id/hello' => 'main#join', as: 'join'
+post '/event/:id/submit_first_answer' => 'main#submit_first_answer', as: 'answers'
 
 root 'main#index'
 

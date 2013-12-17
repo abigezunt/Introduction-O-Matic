@@ -1,9 +1,9 @@
 IntroductionOmatic::Application.routes.draw do
 
 get '/find' => 'main#find', as: 'find'
-post '/events' => 'main#create', as: 'events'
-get '/event/:id' => 'main#show', as: 'event'
-get '/event/:id/hello' => 'users#join', as: 'join'
+post '/events' => 'events#create', as: 'events'
+get '/event/:id' => 'events#show', as: 'event'
+get '/event/:id/hello' => 'users#new', as: 'join'
 post '/event/:id/users' => 'users#create', as: 'users'
 get '/about' => 'main#about', as: 'about'
 

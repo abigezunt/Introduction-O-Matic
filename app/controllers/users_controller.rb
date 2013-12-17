@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_event
 
-  def join
+  def new
+    @event = Event.find(params[:id])
   	@user = User.new
   end
 
 	def create
+    @event = Event.find(params[:id])
     @user = @event.users.create(user_params)
 
     respond_to do |format|

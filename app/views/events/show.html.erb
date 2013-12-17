@@ -1,0 +1,38 @@
+Your event link is: <%= join_url(@event) %>
+
+
+
+    <div class="container">
+
+      <div class="row">
+      
+        <div class="col-lg-12">
+          <h1 class="page-header"><% @event.name %></h1>
+        </div>
+        <% @event.users.each do |user| %>
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 thumb">
+	        <a class="thumbnail" href='#'><%= image_tag(user.image.url(:medium), :class => 'img-responsive') %></a>
+
+		          <h4><%= user.name %></h4>
+              <dl>
+              <dt><%= @event.question_1 %></dt>
+		          <dd><%= user.first_answer %></dd>
+              <dt><%= @event.question_2 %></dt>
+              <dd><%= user.second_answer %></dd>
+              <dt><%= @event.question_3 %></dt>
+              <dd><%= user.third_answer %></dd>
+              </dl>
+
+	          
+	     
+        </div>
+        <% end %>
+      </div>
+      
+      <hr>
+
+
+      
+    </div><!-- /.container -->
+
+

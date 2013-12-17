@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   end
 
 	def create
-    binding.pry
     @user = @event.users.create(user_params)
 
     respond_to do |format|

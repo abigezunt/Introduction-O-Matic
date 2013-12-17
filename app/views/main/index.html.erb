@@ -8,16 +8,7 @@
 <li>See all your guests and their answers!</li>
 </ol>
 
-<div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.first_name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook to create a new event", "/auth/facebook", id: "sign_in" %>
-  <% end %>
-</div>
 
-<% if current_user %>
   <%= form_for(@event) do |f| %>
     <% if @event.errors.any? %>
       <div id="error_explanation">
@@ -33,16 +24,42 @@
 
     <div class="field">
       <%= f.label :event_title %><br>
-      <%= f.text_field :name %>
+      <%= text_area_tag(:name, "", size: "60x2") %>
     </div>
+
     <div class="field">
-      <%= f.label :date %><br>
-      <%= f.text_field :date %>
+      <p>Your name</p>
+      <%= text_area_tag(:host, "", size: "60x2") %>
     </div>
+
+    <div class="field">
+      <%= f.label :event_date %><br>
+      <%= date_field(:event, :date) %>
+    </div>
+
+    <div>
+      <p>Ask a question for your guests</p>
+      <%= text_area_tag(:question_1, "What are you hoping to accomplish at this event?", size: "60x6") %>
+    </div>
+
+    <div>
+      <p>Ask a question for your guests</p>
+      <%= text_area_tag(:question_1, "What are you excited about at this event? What are you looking for tonight?", size: "60x6") %>
+    </div>
+
+    <div>
+      <p>Ask a question for your guests</p>
+      <%= text_area_tag(:question_1, "Come find me if...", size: "60x6") %>
+    </div>
+
+    <div>
+      <p>The password you'll give your guests to log in to this site:</p>
+      <%= text_area_tag(:keyword, "sparklepony", size: "60x2") %>
+    </div>
+
     <div class="actions">
-      <%= f.hidden_field :host_id, value: current_user.id %>
       <%= f.submit %>
     </div>
   <% end %>
-<% end %>
+
 

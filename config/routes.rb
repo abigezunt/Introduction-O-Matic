@@ -1,12 +1,11 @@
 IntroductionOmatic::Application.routes.draw do
-match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-match 'auth/failure', to: redirect('/'), via: [:get, :post]
-match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
+get '/find' => 'main#find', as: 'find'
 post '/events' => 'main#create', as: 'events'
 get '/event/:id' => 'main#show', as: 'event'
-get '/event/:id/hello' => 'main#join', as: 'join'
-post '/event/:id/submit_first_answer' => 'main#submit_first_answer', as: 'answers'
+get '/event/:id/hello' => 'users#join', as: 'join'
+post '/event/:id/users' => 'users#create', as: 'users'
+get '/about' => 'main#about', as: 'about'
 
 root 'main#index'
 

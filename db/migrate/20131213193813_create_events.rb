@@ -3,7 +3,11 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :name
       t.datetime :date
-      t.belongs_to :host, index: true
+      t.text :question_1
+      t.text :question_2
+      t.text :question_3
+      t.text :host
+      t.text :keyword
     end
   end
 end

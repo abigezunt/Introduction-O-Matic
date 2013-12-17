@@ -1,26 +1,10 @@
-/*.guest_thumbnail {
-	height: auto;
-	margin: 10px;
-	border: 1px black solid;
-	-webkit-box-shadow: 6px 6px 16px rgba(50, 50, 50, 0.74);
-  -moz-box-shadow:    6px 6px 16px rgba(50, 50, 50, 0.74);
-  box-shadow:         6px 6px 16px rgba(50, 50, 50, 0.74);
-	text-align: center;
-	float: left;
-	background: url('light_grey.png');
-}
 
-.all_guests {
-	margin: auto;
-	height: 600px;
-}
 
 #wrap {
 	max-width: 800px;
 	margin: auto;
 	text-align: center;
-	background-color: orange;
-}*/
+}
 
 
 .thumbnail {

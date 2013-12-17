@@ -1,16 +1,5 @@
 Your event link is: <%= join_url(@event) %>
-<!-- 
-<div class="all_guests">  
 
-    <div class="guest_thumbnail center">
-      <figure><%#= image_tag user.image %></figure>
-      <strong><%#= link_to user.first_name, user.facebook_profile_link %></strong><br> 
-      <strong><%#= user.answers.last.response %></strong>
-    </div>
-
-</div>
-
- -->
 
 
     <div class="container">
@@ -24,11 +13,12 @@ Your event link is: <%= join_url(@event) %>
         <div class="col-lg-3 col-md-4 col-xs-6">
 	        <div class="thumbnail">
 		        <div class="caption">
-		          <h4><%= user.first_name %></h4>
-		          <p><%= user.answers.last.response %></p>
-		          <p><a href="<%= user.facebook_profile_link %>" class="label label-danger" rel="tooltip" title="Message">Message</a></p>
+		          <h4><%= user.name %></h4>
+		          <p><%= user.first_answer %></p>
+              <p><%= user.second_answer %></p>
+              <p><%= user.third_answer %></p>
 		        </div>
-	          <img src="<%= user.image %>">
+	          <%= image_tag @user.image.url(:medium) %>
 	        </div>
         </div>
         <% end %>

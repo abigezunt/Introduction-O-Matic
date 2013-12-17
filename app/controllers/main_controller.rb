@@ -1,8 +1,14 @@
 class MainController < ApplicationController
-  before_action :set_event, only: [:show, :join, :submit_first_answer]
+  before_action :set_event, only: [:show]
 
 	def index
 		@event = Event.new
+	end
+
+	def about
+	end
+
+	def find
 	end
 
 	def create
@@ -19,24 +25,7 @@ class MainController < ApplicationController
 
 	def show
 	end
-
-	def join
-		@answer = Answer.new
-	end
-
-	def submit_first_answer
-		binding.pry
-		@answer = Answer.new(answer_params)
-		@event.users << current_user
-
-		respond_to do |format|
-			if @answer.save
-				format.html {redirect_to @event, notice: 'Cool, dude!'}
-			else
-				format.html {render action: 'index'}
-			end
-		end
-	end
+  
 
 	private
 
@@ -45,11 +34,7 @@ class MainController < ApplicationController
 	  end
 
 	  def event_params
-	  	params.require(:event).permit(:name, :date, :host_id)
+	  	params.require(:event).permit(:name, :date, :host, :question_1, :question_2, :question_3, :keyword)
 	  end
 
-	  def answer_params
-	  	params.require(:answer).permit(:response, :user_id)
-	  end
-	
 end

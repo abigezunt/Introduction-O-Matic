@@ -10,9 +10,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'dotenv-rails'
-gem 'omniauth'
-gem 'omniauth-facebook', '1.4.0'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass-rails'
+gem "paperclip", "~> 3.0"
+gem 'aws-sdk', '~> 1.5.7'
  
 group :development do
 	gem 'pry-rails'
@@ -21,7 +21,6 @@ group :development do
 	gem 'annotate'
 	gem 'bullet'
   gem 'debugger'
-  gem 'localtunnel'
   gem 'lol_dba'
   gem 'meta_request'
   gem 'quiet_assets'

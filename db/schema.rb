@@ -11,57 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131213233946) do
+ActiveRecord::Schema.define(version: 20131217144625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answers", force: true do |t|
-    t.text    "response"
-    t.integer "question_id"
-    t.integer "user_id"
-  end
-
-  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
-  add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
-
   create_table "events", force: true do |t|
     t.string   "name"
     t.datetime "date"
-    t.integer  "host_id"
+    t.text     "question_1"
+    t.text     "question_2"
+    t.text     "question_3"
+    t.text     "host"
+    t.text     "keyword"
   end
-
-  add_index "events", ["host_id"], name: "index_events_on_host_id", using: :btree
-
-  create_table "events_users", id: false, force: true do |t|
-    t.integer "user_id"
-    t.integer "event_id"
-  end
-
-  add_index "events_users", ["event_id"], name: "index_events_users_on_event_id", using: :btree
-  add_index "events_users", ["user_id", "event_id"], name: "index_events_users_on_user_id_and_event_id", using: :btree
-  add_index "events_users", ["user_id"], name: "index_events_users_on_user_id", using: :btree
-
-  create_table "questions", force: true do |t|
-    t.text    "query"
-    t.integer "event_id"
-  end
-
-  add_index "questions", ["event_id"], name: "index_questions_on_event_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "provider"
-    t.string   "uid"
     t.string   "name"
-    t.text     "email"
-    t.text     "first_name"
-    t.text     "last_name"
-    t.text     "image"
-    t.text     "facebook_profile_link"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
+    t.text     "first_answer"
+    t.text     "second_answer"
+    t.text     "third_answer"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
+
+  add_index "users", ["event_id"], name: "index_users_on_event_id", using: :btree
 
 end

@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="An app for introducing yourself to other people at social gatherings by uploading a picture and answering questions">
+    <meta name="author" content="Abby Howell">
     <title>Introduction-O-Matic</title>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+      <!-- Enable media queries for old IE -->
+  <!--[if lt IE 9]>
+     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
 </head>
   </head>
 
-  <body>
+  <body class="no-touch"> 
 
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
@@ -38,7 +42,7 @@
     </nav>
 
 
-<div id="wrap">
+<div class="wrap" id="wrap">
   <%= yield %>
 </div>
 
@@ -52,6 +56,23 @@
           <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
+    
+  <script type="text/javascript">
+  $(function(){
+     // See if this is a touch device
+     if ('ontouchstart' in window)
+     {
+        // Set the correct body class
+        $('body').removeClass('no-touch').addClass('touch');
+       
+        // Add the touch toggle to show text
+        $('div.boxInner img').click(function(){
+           $(this).closest('.boxInner').toggleClass('touchFocus');
+        });
+     }
+  });
+  </script>
+  
 
 </body>
 </html>

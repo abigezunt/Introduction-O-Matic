@@ -7,7 +7,7 @@ get '/event/:id/hello' => 'users#new', as: 'join'
 post '/event/:id/users' => 'users#create', as: 'users'
 get '/about' => 'main#about', as: 'about'
 
-root 'main#index'
+root 'events#index'
 
 
   # Example of regular route:

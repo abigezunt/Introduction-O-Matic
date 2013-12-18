@@ -29,7 +29,6 @@ class EventsController < ApplicationController
 	  end
 
 	  def event_params
-	  	binding.pry
 	  	params.require(:event).permit(:name, :date, :host, :question_1, :question_2, :question_3, :keyword)
 	  end
 

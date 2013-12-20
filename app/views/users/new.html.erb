@@ -1,39 +1,35 @@
-<div class="row">
 
-<div class="col-md-6 col-md-offset-3">
 <form class="form-horizontal" role="form">
 A few quick questions if you don't mind:
 
   <%= form_for @user, :url => users_path, :html => { :multipart => true, :class => "form-control" } do |f| %>
-    <div class="form-group">
+    <div class="field form-group">
       <label for="name">Your name:</label>
       <%= f.text_field :name %>
     </div>
 
-    <div class="form-group">
+    <div class="field form-group">
       <h5><%= @event.question_1 %></h5>
       <%= f.text_field :first_answer %>
     </div>
 
-    <div class="form-group">
+    <div class="field form-group">
       <h5> <%= @event.question_2 %></h5>
       <%= f.text_field :second_answer %>
     </div>
 
-    <div class="form-group">
+    <div class="field form-group">
       <h5><%= @event.question_3 %></h5>
       <%= f.text_field :third_answer %>
     </div>
 
-    <div class="form-group">
+    <div class="field form-group">
       <h5>Selfie!</h5>
       <%= f.file_field :photo, :accept => "image/*", class: "photo-upload" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit %>
+    <div class="actions form-group">
+      <%= f.submit ({:class => "btn btn primary"})%>
     </div>
   <% end %>
 </form>
-</div>
-</div>

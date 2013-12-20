@@ -1,13 +1,13 @@
 IntroductionOmatic::Application.routes.draw do
 
-get '/find' => 'main#find', as: 'find'
+get '/try_it_out' => 'main#try', as: 'try'
 post '/events' => 'events#create', as: 'events'
 get '/event/:id' => 'events#show', as: 'event'
 get '/event/:id/hello' => 'users#new', as: 'join'
 post '/event/:id/users' => 'users#create', as: 'users'
 get '/about' => 'main#about', as: 'about'
 
-root 'events#index'
+root 'events#about'
 
 
   # Example of regular route:

@@ -3,7 +3,8 @@ class MainController < ApplicationController
 	def about
 	end
 
-	def find
+	def try
+		@event = Event.first
 	end
 
 end

@@ -9,13 +9,6 @@ body {
 	padding: 100px 0;
 }
 
-.full-width-image-2 {
-	background: url(http://lorempixel.com/g/1920/450/) no-repeat center center;
-	background-size: cover;
-	text-align: center;
-	height: 450px;
-}
-
 .logo-wrapper {
 	display: inline-block;
 }

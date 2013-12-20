@@ -1,0 +1,29 @@
+<h1>Welcome to the NameTag virtual holiday party!</h1>
+
+<h2 class="center"><%= link_to "Introduce yourself", join_url(@event) %></h2>
+  
+
+  <% @event.users.each do |user| %>
+    <!-- Define all of the tiles: -->
+    <div class="box">
+      <div class="boxInner">
+        <%= image_tag user.image.url(:medium) %>
+        <div class="titleBox"><h4><%= user.name.capitalize %></h4>
+          <dl>
+          <dt><%= @event.question_1 %></dt>
+          <dd><%= user.first_answer %></dd>
+          <dt><%= @event.question_2 %></dt>
+          <dd><%= user.second_answer %></dd>
+          <dt><%= @event.question_3 %></dt>
+          <dd><%= user.third_answer %></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+   
+  <% end %>
+
+  
+
+
+

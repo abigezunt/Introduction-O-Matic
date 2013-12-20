@@ -27,6 +27,16 @@ class MainController < ApplicationController
     end
 	end
 
+  private
+
+    def set_event
+      @event = Event.find(params[:id])
+    end
+
+
+    def user_params
+      params.require(:user).permit(:name, :first_answer, :second_answer, :third_answer, :image)
+    end
 
 
 end

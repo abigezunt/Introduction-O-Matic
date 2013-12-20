@@ -1,54 +1,56 @@
-
-  <%= form_for(@event) do |f| %>
-    <% if @event.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-        <ul>
-        <% @event.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="field">
-      <p>Event title</p>
-      <%= text_area( :event, :name) %>
-    </div>
-
-    <div class="field">
-      <p>Your name</p>
-      <%= text_area(:event, :host) %>
-    </div>
-
-    <div class="field">
-      <p>Event Date</p>
-      <%= date_field(:event, :date) %>
-    </div>
-
-    <div>
-      <p>Question 1</p>
-      <%= text_area(:event, :question_1) %>
-    </div>
-
-    <div>
-      <p>Question 2</p>
-      <%= text_area(:event, :question_2) %>
-    </div>
-
-    <div>
-      <p>Question 3</p>
-      <%= text_area(:event, :question_3) %>
-    </div>
-
-    <div>
-      <p>The password you'll give your guests to log in to this site:</p>
-      <%= text_area(:event, :keyword) %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
-
+<div class="col-md-6 col-md-offset-3">
+ <form class="form-horizontal" role="form"> 
+ <%= form_for(@event) do |f| %>
+     <% if @event.errors.any? %>
+       <div id="error_explanation">
+         <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+ 
+         <ul>
+         <% @event.errors.full_messages.each do |msg| %>
+           <li><%= msg %></li>
+         <% end %>
+         </ul>
+       </div>
+     <% end %>
+ 
+     <div class="field control-group">
+       <h5>Event title</h5>
+       <%= text_area( :event, :name) %>
+     </div>
+ 
+     <div class="field">
+       <h5>Your name</h5>
+       <%= text_area(:event, :host) %>
+     </div>
+ 
+     <div class="field">
+       <h5>Event Date</h5>
+       <%= date_field(:event, :date) %>
+     </div>
+ 
+     <div>
+       <h5>Question 1</h5>
+       <%= text_area(:event, :question_1) %>
+     </div>
+ 
+     <div>
+       <h5>Question 2</h5>
+       <%= text_area(:event, :question_2) %>
+     </div>
+ 
+     <div>
+       <h5>Question 3</h5>
+       <%= text_area(:event, :question_3) %>
+     </div>
+ 
+     <div>
+       <h5>The password you'll give your guests to log in to this site:</h5>
+       <%= text_area(:event, :keyword) %>
+     </div>
+ 
+     <div class="actions">
+       <%= f.submit %>
+     </div>
+   <% end %>
+ 
+ </form></div>

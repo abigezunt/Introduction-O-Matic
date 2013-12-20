@@ -10,11 +10,13 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'dotenv-rails'
-gem 'bootstrap-sass-rails'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk', '~> 1.5.7'
 gem 'rails_12factor'
- 
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
 group :development do
 	gem 'pry-rails'
 	gem 'better_errors'

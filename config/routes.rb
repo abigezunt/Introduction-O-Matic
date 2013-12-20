@@ -6,7 +6,8 @@ get '/event/:id' => 'events#show', as: 'event'
 get '/event/:id/hello' => 'users#new', as: 'join'
 post '/event/:id/users' => 'users#create', as: 'users'
 get '/about' => 'main#about', as: 'about'
-
+get '/join' => 'main#demo_join', as: 'demo_join'
+get '/create' => 'main#demo_create', as: 'demo_create'
 root 'main#about'
 
 

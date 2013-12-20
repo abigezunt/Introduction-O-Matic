@@ -12,9 +12,7 @@
         text-align: center;
     }
     .wrap {
-       overflow: hidden;
-       margin: 20px;
-       margin-top: 40px;
+     padding: 20px;
     }
     .box {
        float: left;

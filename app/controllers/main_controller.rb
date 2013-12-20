@@ -4,7 +4,7 @@ class MainController < ApplicationController
 	end
 
 	def try
-		@event = Event.first
+		@event = Event.find(1)
 	end
 
 end

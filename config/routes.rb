@@ -1,5 +1,5 @@
 IntroductionOmatic::Application.routes.draw do
-
+get '/new_event' => 'events#index', as: 'new_event'
 get '/try_it_out' => 'main#try', as: 'try'
 post '/events' => 'events#create', as: 'events'
 get '/event/:id' => 'events#show', as: 'event'
@@ -7,7 +7,7 @@ get '/event/:id/hello' => 'users#new', as: 'join'
 post '/event/:id/users' => 'users#create', as: 'users'
 get '/about' => 'main#about', as: 'about'
 
-root 'events#about'
+root 'main#about'
 
 
   # Example of regular route:

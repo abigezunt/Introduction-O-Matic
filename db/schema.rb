@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217144625) do
+ActiveRecord::Schema.define(version: 20131226194153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,19 @@ ActiveRecord::Schema.define(version: 20131217144625) do
     t.text     "question_3"
     t.text     "host"
     t.text     "keyword"
+    t.string   "encrypted_keyword",     default: "", null: false
+    t.string   "reset_keyword_token"
+    t.datetime "reset_keyword_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",         default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "events", ["host"], name: "index_events_on_host", using: :btree
+  add_index "events", ["reset_keyword_token"], name: "index_events_on_reset_keyword_token", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

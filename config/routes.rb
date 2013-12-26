@@ -1,4 +1,5 @@
 IntroductionOmatic::Application.routes.draw do
+  devise_for :events
 get '/new_event' => 'events#index', as: 'new_event'
 get '/try_it_out' => 'main#try', as: 'try'
 post '/events' => 'events#create', as: 'events'
